@@ -1,0 +1,35 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "https://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+	<bean id="controller"
+		class="cigma.pfe.controllers.ClientController" scope="prototype">
+		
+		<property name="clientService" ref="service"></property>
+
+	</bean>
+
+	<bean id="service" class="cigma.pfe.services.ClientServiceImpl"
+		scope="prototype">
+
+		<property name="clientRepository" ref="repository"></property>
+
+	</bean>
+	
+	<bean id="repository"
+		class="cigma.pfe.repositories.ClientRepositoryImpl" scope="prototype">
+
+	</bean>
+	
+	<bean id="client" class="cigma.pfe.models.Client">
+
+		<property name="name" value="Mohammed"></property>
+		
+	</bean>
+	
+	<bean id="client1" class="cigma.pfe.models.Client">
+
+		<property name="name" value="Tidili"></property>
+		
+	</bean>
+
+</beans>
